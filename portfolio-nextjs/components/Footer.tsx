@@ -68,9 +68,6 @@ function SocialIcon({ href, children }: { href: string; children: React.ReactNod
 }
 
 export default function Footer() {
-  const [email, setEmail] = useState('')
-  const [sendHover, setSendHover] = useState(false)
-
   return (
     <footer style={{ background: '#08111F', borderRadius: '28px 28px 0 0', overflow: 'hidden', borderTop: '1px solid rgba(96,165,250,.18)', position: 'relative' }}>
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 20% 0%,rgba(37,99,235,.22),transparent 32%),radial-gradient(circle at 80% 15%,rgba(56,189,248,.16),transparent 30%)', pointerEvents: 'none' }} />
@@ -86,7 +83,7 @@ export default function Footer() {
 
         <div style={{ width: '100%', height: 1, background: 'rgba(255,255,255,.1)', marginBottom: 22 }} />
 
-        <div className="reveal footer-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1.5fr', gap: 24, marginBottom: 24 }}>
+        <div className="reveal footer-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: 24, marginBottom: 24 }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
               <div style={{ width: 34, height: 34, borderRadius: 9, background: 'linear-gradient(135deg,#2563EB,#38BDF8)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 22px rgba(37,99,235,.3)' }}>
@@ -109,7 +106,7 @@ export default function Footer() {
                   <path d="M3 6l9 6 9-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
               </SocialIcon>
-              <SocialIcon href="https://www.linkedin.com/in/AttaUrRehman24">
+              <SocialIcon href="https://www.linkedin.com/in/atta-ur-rehman-software-engineer/">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
@@ -137,51 +134,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div>
-            <h4 style={{ fontFamily: 'var(--font-body)', fontWeight: 800, fontSize: 13.5, color: '#fff', letterSpacing: '-.015em', marginBottom: 8 }}>
-              Project inquiry
-            </h4>
-            <p style={{ margin: '0 0 10px', fontFamily: 'var(--font-body)', fontSize: 12.2, lineHeight: 1.45, color: 'rgba(226,232,240,.62)' }}>
-              Send your email and I&apos;ll reply with the fastest path from idea to production.
-            </p>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault()
-                if (email) window.location.href = `mailto:iamatta24@gmail.com?subject=Project%20inquiry&body=${encodeURIComponent(email)}`
-              }}
-              style={{ display: 'flex', borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(255,255,255,.12)', background: 'rgba(255,255,255,.06)', boxShadow: '0 18px 40px rgba(0,0,0,.18)' }}
-            >
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email address"
-                style={{ flex: 1, background: 'rgba(255,255,255,.08)', padding: '10px 13px', fontFamily: 'var(--font-body)', fontSize: 12.5, color: '#fff', outline: 'none', border: 'none', minWidth: 0 }}
-              />
-              <button
-                type="submit"
-                style={{
-                  width: 40,
-                  background: sendHover ? '#1D4ED8' : 'var(--primary)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  cursor: 'pointer',
-                  border: 'none',
-                  flexShrink: 0,
-                  transition: 'background .2s',
-                }}
-                onMouseEnter={() => setSendHover(true)}
-                onMouseLeave={() => setSendHover(false)}
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </form>
           </div>
         </div>
 
