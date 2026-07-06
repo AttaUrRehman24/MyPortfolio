@@ -21,7 +21,7 @@ export default function TechnicalExpertise() {
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="section-lead" style={{ textAlign: 'center' }}>
-              Full-stack depth across the entire delivery surface — front end to infrastructure.
+              Full-stack depth across the entire delivery surface, from front end to infrastructure.
             </p>
           </FadeUp>
         </div>

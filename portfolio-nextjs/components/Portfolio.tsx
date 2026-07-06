@@ -25,7 +25,7 @@ const PROJECTS: PortfolioProject[] = [
     url: 'https://nucleos.com',
     objectPosition: 'center top',
     description:
-      'Education at scale in secure environments — a unified platform with 50+ learning apps, enterprise-grade security, and real-time analytics for justice-involved learners.',
+      'Education at scale in secure environments: a unified platform with 50+ learning apps, enterprise-grade security, and real-time analytics for justice-involved learners.',
     tags: ['SaaS', 'Full Stack'],
     accent: '#10B981',
   },
@@ -37,7 +37,7 @@ const PROJECTS: PortfolioProject[] = [
     url: 'https://rentahuman.ai',
     objectPosition: 'center top',
     description:
-      'The meatspace layer for AI agents — a YC-backed marketplace where AI agents hire 750k+ verified humans for real-world tasks across 100+ countries.',
+      'The meatspace layer for AI agents: a YC-backed marketplace where AI agents hire 750k+ verified humans for real-world tasks across 100+ countries.',
     tags: ['AI / LLM', 'SaaS'],
     accent: '#2563EB',
   },
@@ -49,7 +49,7 @@ const PROJECTS: PortfolioProject[] = [
     url: 'https://healthhavenrx.com/',
     objectPosition: 'center top',
     description:
-      'AI-powered digital pharmacy platform licensed across all 50 US states — scaled to 20k+ patients and 100k+ prescriptions delivered.',
+      'AI-powered digital pharmacy platform licensed across all 50 US states, scaled to 20k+ patients and 100k+ prescriptions delivered.',
     tags: ['Healthcare', 'AI / LLM'],
     accent: '#22C55E',
   },
@@ -61,7 +61,7 @@ const PROJECTS: PortfolioProject[] = [
     url: 'https://www.mainstaydigital.com/',
     objectPosition: 'center top',
     description:
-      'Interactive 3D product platform — CAD-to-AR pipeline delivering immersive B2B demos that boost engagement 66% and accelerate decisions 15%.',
+      'Interactive 3D product platform: CAD-to-AR pipeline delivering immersive B2B demos that boost engagement 66% and accelerate decisions 15%.',
     tags: ['SaaS', 'Cloud'],
     accent: '#6366F1',
   },
@@ -73,7 +73,7 @@ const PROJECTS: PortfolioProject[] = [
     url: 'https://www.tamm.abudhabi/',
     objectPosition: 'center top',
     description:
-      'Government omni-channel services portal — modern digital experience connecting citizens to 900+ Abu Dhabi government services.',
+      'Government omni-channel services portal: modern digital experience connecting citizens to 900+ Abu Dhabi government services.',
     tags: ['Full Stack', 'Cloud'],
     accent: '#00A3A3',
   },
@@ -85,7 +85,7 @@ const PROJECTS: PortfolioProject[] = [
     url: 'https://healthtech.altron.com',
     objectPosition: 'center top',
     description:
-      "Enterprise corporate website for South Africa's leading HealthTech company — multi-audience UX across clinics, doctors, bureaus and enterprise, tabbed solutions across 6 verticals, and full POPIA compliance.",
+      "Enterprise corporate website for South Africa's leading HealthTech company: multi-audience UX across clinics, doctors, bureaus and enterprise, tabbed solutions across 6 verticals, and full POPIA compliance.",
     tags: ['HealthTech', 'Enterprise'],
     accent: '#1B6CA8',
   },

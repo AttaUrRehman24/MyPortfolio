@@ -38,14 +38,14 @@ export default function About() {
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="section-lead" style={{ marginTop: 18 }}>
-              I&apos;m Atta Ur Rehman — a Senior Full Stack Engineer with 10+ years building scalable SaaS, AI-powered systems,
+              I&apos;m Atta Ur Rehman, a Senior Full Stack Engineer with 10+ years building scalable SaaS, AI-powered systems,
               healthcare platforms, government systems, telecom solutions, and enterprise software. I architect, build, and ship
-              production-grade products on Node.js, TypeScript, NestJS and React — then harden them to production on AWS with Docker.
+              production-grade products on Node.js, TypeScript, NestJS and React, then harden them to production on AWS with Docker.
             </p>
           </FadeUp>
           <FadeUp delay={0.15}>
             <p className="section-lead" style={{ marginTop: 14, color: 'var(--text-light)' }}>
-              I prototype fast, work directly with users, and make calls with incomplete information — the way a founding engineer does.
+              I prototype fast, work directly with users, and make calls with incomplete information, the way a founding engineer does.
               Not a $15/hr freelancer. Not a slow agency.
             </p>
           </FadeUp>

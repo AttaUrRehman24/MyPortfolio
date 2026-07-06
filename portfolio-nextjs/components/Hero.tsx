@@ -74,20 +74,30 @@ const FOUNDER_PAIN_POINTS = [
 ]
 
 const WORK_WITH_ME_POINTS = [
-  'Custom platform for your critical workflows',
-  'Secure, scalable system with no costly rebuild',
-  'Real-time analytics for sharper decisions',
-  'Clean product experience users actually enjoy',
-  'One senior engineer owning it end-to-end',
-  'A digital asset that elevates your brand',
+  'A platform built around how your business actually runs, not a generic template patched to fit',
+  "A codebase that won't need a full rebuild six months from now",
+  "Data that tells you what's happening in your product, in real time",
+  "An interface your users don't need a manual for",
+  'One engineer who owns the full thing: architecture, code, decisions, delivery',
+  'Something you can hand off, scale, or sell because it was built properly from day one',
 ]
 
-const HERO_FLOATING_PROOFS = [
+const HERO_TOP_FLOATING_PROOFS = [
   { label: 'Available for', value: 'Senior / full-stack roles', position: 'hero-floating-proof--tl' },
-  { label: 'Mindset', value: 'Founding engineer ownership', position: 'hero-floating-proof--ml' },
   { label: 'Specialty', value: 'AI / LLM + SaaS architecture', position: 'hero-floating-proof--tr' },
-  { label: 'Working style', value: 'Direct 1:1 execution', position: 'hero-floating-proof--br' },
 ]
+
+function HeroColumnProof({ label, value, align }: { label: string; value: string; align?: 'right' }) {
+  return (
+    <div
+      className={['hero-column-proof', align === 'right' ? 'hero-column-proof--right' : ''].filter(Boolean).join(' ')}
+      aria-hidden
+    >
+      <span>{label}</span>
+      <strong>{value}</strong>
+    </div>
+  )
+}
 
 function StarRow() {
   return (
@@ -120,6 +130,74 @@ function SocialLinks({ className = '' }: { className?: string }) {
   )
 }
 
+function CheckIcon() {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden>
+      <path d="M3.5 8.2 6.6 11.3 12.8 4.7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function FounderCard() {
+  return (
+    <div className="hero-side-card">
+      <span className="hero-side-eyebrow">For founders</span>
+      <h2 className="hero-side-title">Are you a founder, and...</h2>
+      <div className="hero-mini-list">
+        {FOUNDER_PAIN_POINTS.map((point, index) => (
+          <div key={point} className="hero-mini-item">
+            <span className="hero-mini-num">{String(index + 1).padStart(2, '0')}</span>
+            <p>{point}</p>
+          </div>
+        ))}
+      </div>
+      <p className="hero-side-note">
+        I turn rough ideas, broken builds, and stalled MVPs into production-ready software.
+      </p>
+    </div>
+  )
+}
+
+function OfferCard() {
+  return (
+    <div className="hero-side-card hero-side-card--right">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <span className="hero-side-eyebrow">What I offer</span>
+          <h2 className="hero-side-title">Work with me and you&apos;ll have...</h2>
+        </div>
+        <StarRow />
+      </div>
+
+      <div className="hero-offer-list hero-wide-list">
+        {WORK_WITH_ME_POINTS.map((point) => (
+          <div key={point} className="hero-offer-item">
+            <span aria-hidden>
+              <CheckIcon />
+            </span>
+            <p>{point}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="hero-proof-grid">
+        <div>
+          <strong>10+</strong>
+          <span>Years</span>
+        </div>
+        <div>
+          <strong>500+</strong>
+          <span>Projects</span>
+        </div>
+        <div>
+          <strong>300+</strong>
+          <span>Clients</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
   const portraitRef = useRef<HTMLDivElement>(null)
@@ -143,7 +221,7 @@ export default function Hero() {
       className="hero-home relative w-full min-w-0 overflow-visible bg-white px-4 pb-6 pt-28 sm:px-8 lg:px-12"
     >
       <div className="hero-floating-proofs" aria-hidden>
-        {HERO_FLOATING_PROOFS.map((item) => (
+        {HERO_TOP_FLOATING_PROOFS.map((item) => (
           <div key={item.label} className={`hero-floating-proof ${item.position}`}>
             <span>{item.label}</span>
             <strong>{item.value}</strong>
@@ -173,22 +251,8 @@ export default function Hero() {
           {/* LEFT — 25% */}
           <aside className="hero-in-3 order-2 hidden flex-col gap-3 lg:order-none lg:col-span-3 lg:flex">
             <SocialLinks />
-
-            <div className="hero-side-card">
-              <span className="hero-side-eyebrow">For founders</span>
-              <h2 className="hero-side-title">Are you a founder, and...</h2>
-              <div className="hero-mini-list">
-                {FOUNDER_PAIN_POINTS.map((point, index) => (
-                  <div key={point} className="hero-mini-item">
-                    <span className="hero-mini-num">{String(index + 1).padStart(2, '0')}</span>
-                    <p>{point}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="hero-side-note">
-                I turn rough ideas, broken builds, and stalled MVPs into production-ready software.
-              </p>
-            </div>
+            <FounderCard />
+            <HeroColumnProof label="Mindset" value="Founding engineer ownership" />
           </aside>
 
           {/* CENTER — 50% */}
@@ -225,94 +289,15 @@ export default function Hero() {
 
           {/* RIGHT — 25% */}
           <aside className="hero-in-3 order-3 hidden flex-col gap-3 lg:col-span-3 lg:flex">
-            <div className="hero-side-card hero-side-card--right">
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <span className="hero-side-eyebrow">What I offer</span>
-                  <h2 className="hero-side-title">Work with me and you&apos;ll have...</h2>
-                </div>
-                <StarRow />
-              </div>
-
-              <div className="hero-offer-list hero-wide-list">
-                {WORK_WITH_ME_POINTS.map((point) => (
-                  <div key={point} className="hero-offer-item">
-                    <span aria-hidden>
-                      <svg viewBox="0 0 16 16" fill="none">
-                        <path d="M3.5 8.2 6.6 11.3 12.8 4.7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                    <p>{point}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="hero-proof-grid">
-                <div>
-                  <strong>10+</strong>
-                  <span>Years</span>
-                </div>
-                <div>
-                  <strong>500+</strong>
-                  <span>Projects</span>
-                </div>
-                <div>
-                  <strong>300+</strong>
-                  <span>Clients</span>
-                </div>
-              </div>
-            </div>
+            <OfferCard />
+            <HeroColumnProof label="Working style" value="Direct 1:1 execution" align="right" />
           </aside>
         </div>
 
-        {/* Mobile: quote + stats */}
         <div className="mt-8 flex flex-col gap-6 lg:hidden">
           <SocialLinks className="justify-center pl-0" />
-
-          <div className="hero-side-card">
-            <span className="hero-side-eyebrow">For founders</span>
-            <h2 className="hero-side-title">Is your build stuck?</h2>
-            <div className="hero-mini-list">
-              {FOUNDER_PAIN_POINTS.slice(0, 2).map((point, index) => (
-                <div key={point} className="hero-mini-item">
-                  <span className="hero-mini-num">{String(index + 1).padStart(2, '0')}</span>
-                  <p>{point}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="hero-side-card">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <span className="hero-side-eyebrow">What I offer</span>
-                <h2 className="hero-side-title">Architecture plus execution.</h2>
-              </div>
-              <StarRow />
-            </div>
-            <div className="hero-offer-list mt-4">
-              {WORK_WITH_ME_POINTS.slice(0, 3).map((point) => (
-                <div key={point} className="hero-offer-item">
-                  <span aria-hidden>
-                    <svg viewBox="0 0 16 16" fill="none">
-                      <path d="M3.5 8.2 6.6 11.3 12.8 4.7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                  <p>{point}</p>
-                </div>
-              ))}
-            </div>
-            <div className="hero-proof-grid mt-4">
-              <div>
-                <strong>10+</strong>
-                <span>Years</span>
-              </div>
-              <div>
-                <strong>500+</strong>
-                <span>Projects</span>
-              </div>
-            </div>
-          </div>
+          <FounderCard />
+          <OfferCard />
         </div>
       </div>
     </section>

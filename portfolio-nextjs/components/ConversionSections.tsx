@@ -1,8 +1,8 @@
 const problemCards = [
   {
-    label: 'AI Services',
-    title: "AI Isn't Working the Way You Expected?",
-    copy: 'I fix broken LLM integrations, agents, automations, RAG pipelines, prompt workflows, and AI features that are slow, unreliable, or difficult to scale.',
+    label: 'AI Engineering',
+    title: "You built the AI feature. It just doesn't work right.",
+    copy: "Most LLM integrations fail quietly: hallucinations slip through, RAG pipelines return garbage, agents loop or break under load. I come in after the hype, find what's actually wrong, and rebuild it to be reliable, fast, and production-grade.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="7" y="7" width="10" height="10" rx="2" />
@@ -12,8 +12,8 @@ const problemCards = [
   },
   {
     label: 'Product Development',
-    title: "Have a Great Idea but Don't Know Where to Start?",
-    copy: 'I transform rough ideas into production-ready applications with scalable architecture, intuitive UX, secure APIs, databases, authentication, and cloud deployment.',
+    title: "The idea is clear in your head. The path to production isn't.",
+    copy: "I've taken rough napkin ideas to deployed products more times than I can count. I handle the full build architecture, APIs, auth, database design, cloud setup, so you're not stitching together freelancers or guessing at decisions that will cost you later.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 18h6M10 21h4" />
@@ -23,8 +23,8 @@ const problemCards = [
   },
   {
     label: 'Scalability',
-    title: "Afraid Your App Won't Handle Growth?",
-    copy: 'I optimize performance with caching, queues, database tuning, real-time systems, and cloud architecture before growth becomes a bottleneck.',
+    title: "Your app works fine. Until it doesn't.",
+    copy: "Traffic spikes, slow queries, jobs that back up under load these aren't random. They're predictable, and they're fixable before they become incidents. I tune the systems that are already there and redesign the ones that won't hold.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 19V10M12 19V5M20 19v-6" />
@@ -34,8 +34,8 @@ const problemCards = [
   },
   {
     label: 'Security',
-    title: 'Security Concerns Delaying Your Launch?',
-    copy: 'I strengthen authentication, APIs, authorization, OWASP compliance, testing workflows, and production readiness so your team can release securely and confidently.',
+    title: "Security debt is invisible right up until it isn't.",
+    copy: "Most teams know the gaps are there. They ship anyway. I work through auth flows, API exposure, authorization logic, and OWASP coverage not as a compliance checkbox, but as the thing that lets you actually trust what you're deploying.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 3 5 6v5.5c0 4.2 2.9 7.5 7 8.5 4.1-1 7-4.3 7-8.5V6l-7-3Z" />
@@ -119,8 +119,9 @@ export default function ConversionSections() {
           <div className="conversion-hero__col">
             <span className="conversion-eyebrow reveal d1">Main pitch</span>
             <h2 className="reveal d2">
-              When software blocks growth, I turn <span className="conversion-hero__accent">the hard problems</span> into
-              shipped products.
+              Software should ship.
+              <br />
+              When it doesn&apos;t, <span className="conversion-hero__accent">that&apos;s where I come in.</span>
             </h2>
           </div>
 
@@ -128,9 +129,9 @@ export default function ConversionSections() {
 
           <div className="conversion-hero__col conversion-hero__col--lede">
             <p className="reveal d3">
-              AI issues, scaling problems, security gaps, or a product idea that needs a real build plan:
-              I help teams move from uncertainty to production with senior ownership across architecture,
-              UX, delivery, and launch.
+              From messy codebases to half-built AI features to systems that buckle under load I&apos;ve seen the
+              patterns. I work directly with engineering teams to unblock delivery, make the right architecture calls,
+              and get production-ready products out the door.
             </p>
           </div>
         </div>

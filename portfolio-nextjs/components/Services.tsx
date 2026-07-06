@@ -83,7 +83,7 @@ export default function Services() {
             <span style={{ color: '#fff' }}>My</span> <span style={{ color: 'var(--primary)' }}>Services</span>
           </h2>
           <p style={{ maxWidth: 400, fontFamily: 'var(--font-body)', fontWeight: 500, fontSize: 14.5, lineHeight: 1.45, letterSpacing: '-.015em', color: 'rgba(255,255,255,.78)' }}>
-            Full-stack engineering from architecture to production — SaaS, AI-powered systems, and enterprise platforms built to scale.
+            Full-stack engineering from architecture to production: SaaS, AI-powered systems, and enterprise platforms built to scale.
           </p>
         </div>
 

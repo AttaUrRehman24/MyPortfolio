@@ -14,7 +14,7 @@ export default function Stats() {
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="section-lead" style={{ textAlign: 'center', color: 'rgba(255,255,255,.7)' }}>
-              Not theory — the hard, regulated, high-scale version already shipped to production.
+              Not theory. The hard, regulated, high-scale version already shipped to production.
             </p>
           </FadeUp>
         </div>
@@ -35,7 +35,7 @@ export default function Stats() {
           <StaggerItem>
             <div className="stat-card">
               <Counter to={50} className="stat-num" />
-              <p className="stat-label">US states — pharmacy platform licensed</p>
+              <p className="stat-label">US states, pharmacy platform licensed</p>
             </div>
           </StaggerItem>
           <StaggerItem>
@@ -47,7 +47,7 @@ export default function Stats() {
           <StaggerItem>
             <div className="stat-card stat-card--highlight">
               <span className="stat-num">Founding</span>
-              <p className="stat-label">engineer track record — architecture, product &amp; code</p>
+              <p className="stat-label">engineer track record: architecture, product &amp; code</p>
             </div>
           </StaggerItem>
         </Stagger>

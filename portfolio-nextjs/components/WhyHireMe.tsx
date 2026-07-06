@@ -61,7 +61,7 @@ export default function WhyHireMe() {
 
           <p className="why-desc">
             Senior &amp; founding full-stack engineer with 10+ years shipping production SaaS,
-            AI-powered systems, and high-scale platforms. I architect, build, and ship — the way
+            AI-powered systems, and high-scale platforms. I architect, build, and ship the way
             a founding engineer does.
           </p>
 

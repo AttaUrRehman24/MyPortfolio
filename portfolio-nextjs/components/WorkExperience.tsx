@@ -3,7 +3,7 @@ const experiences = [
     company: 'TransData',
     period: 'Feb 2023 – Present',
     role: 'Principal Software Engineer',
-    desc: 'Own full-stack products end-to-end — Node.js/NestJS + GraphQL services and React/Next.js front ends, shipping production code daily.',
+    desc: 'Own full-stack products end-to-end: Node.js/NestJS + GraphQL services and React/Next.js front ends, shipping production code daily.',
   },
   {
     company: 'CloudMedx (US, Remote)',

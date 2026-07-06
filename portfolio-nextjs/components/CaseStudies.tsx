@@ -81,14 +81,14 @@ export default function CaseStudies() {
             <h1 className="csp-hero-title">
               The hard, regulated,{' '}
               <span className="csp-hero-title--accent">high-scale</span>
-              <br />version — already shipped
+              <br />version, already shipped
             </h1>
           </FadeUp>
 
           <FadeUp delay={0.12}>
             <p className="csp-hero-lead">
               Healthcare, AI, government, telecom and fintech. Each one a real build
-              with real outcomes — not theory.
+              with real outcomes, not theory.
             </p>
           </FadeUp>
 

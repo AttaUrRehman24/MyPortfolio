@@ -1,0 +1,12 @@
+﻿# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies & build output (Next.js app)
+portfolio-nextjs/node_modules/
+portfolio-nextjs/.next/
+portfolio-nextjs/out/
+
+# Env files
+.env
+.env*.local

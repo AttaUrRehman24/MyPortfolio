@@ -19,7 +19,7 @@ export const projects: Project[] = [
   {
     slug: 'healthhavenrx',
     name: 'HealthHavenRx',
-    tagline: 'AI digital pharmacy — licensed in all 50 US states',
+    tagline: 'AI digital pharmacy, licensed in all 50 US states',
     category: 'Healthcare · AI',
     url: 'https://healthhavenrx.com',
     gradient: 'linear-gradient(135deg,#1D4ED8,#3B82F6)',
@@ -28,9 +28,9 @@ export const projects: Project[] = [
     tags: ['Next.js', 'Node.js', 'AI', 'AWS', 'HIPAA'],
     metric: '20k+ patients · 100k+ prescriptions',
     challenge:
-      'Pharmacies and healthcare companies struggled to go digital — fragmented prescribing, fulfillment, insurance billing and pricing.',
+      'Pharmacies and healthcare companies struggled to go digital: fragmented prescribing, fulfillment, insurance billing and pricing.',
     built:
-      'An AI-powered, API-driven pharmacy platform — e-prescribing, fulfillment, insurance billing and real-time pricing transparency, licensed across all 50 US states, with real-time analytics.',
+      'An AI-powered, API-driven pharmacy platform: e-prescribing, fulfillment, insurance billing and real-time pricing transparency, licensed across all 50 US states, with real-time analytics.',
     result: 'Scaled to 20k+ patients and 100k+ prescriptions delivered, with full 50-state coverage.',
     featured: true,
   },
@@ -45,9 +45,9 @@ export const projects: Project[] = [
     img: '/images/portfolio/coremaxcloud.png',
     tags: ['React', 'Node.js', 'iOS', 'Android', 'HIPAA'],
     metric: 'Multi-device, real-time coordination',
-    challenge: 'Surgical practices buried in paperwork and redundant admin — outdated systems eating into patient care.',
+    challenge: 'Surgical practices buried in paperwork and redundant admin: outdated systems eating into patient care.',
     built:
-      'An EHR + RCM + practice-management platform: scheduling, clinical charting, claims and analytics across web and native iOS / Android — HIPAA-compliant.',
+      'An EHR + RCM + practice-management platform: scheduling, clinical charting, claims and analytics across web and native iOS / Android, HIPAA-compliant.',
     result: 'Real-time, multi-device coordination that gives surgical teams their time back and refocuses it on care.',
     featured: true,
   },
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     metric: '15–20 hrs/week saved per recruiter',
     challenge: 'Sourcing executives took recruiters up to 3 months of manual profile-digging across disconnected tools.',
     built:
-      'An AI sourcing platform — React Chrome extension + web app on AWS microservices, data pipelines processing millions of records, multi-channel outreach automation.',
+      'An AI sourcing platform: React Chrome extension + web app on AWS microservices, data pipelines processing millions of records, multi-channel outreach automation.',
     result: 'Find exact-match candidates in seconds, not months. Saved recruiters 15–20 hours every week.',
     featured: true,
   },
@@ -96,15 +96,15 @@ export const projects: Project[] = [
     img: '/images/portfolio/rentahuman.png',
     tags: ['MCP', 'REST API', 'Marketplace', 'Escrow'],
     metric: '750k+ humans · 100+ countries',
-    challenge: "AI agents can't act in the physical world — no way to hire and coordinate real people for real-world tasks.",
+    challenge: "AI agents can't act in the physical world: no way to hire and coordinate real people for real-world tasks.",
     built:
-      'A marketplace + API where AI agents rent verified humans for physical tasks — browse by skill and location, post tasks, escrow payments, with MCP + REST API for autonomous hiring.',
+      'A marketplace + API where AI agents rent verified humans for physical tasks: browse by skill and location, post tasks, escrow payments, with MCP + REST API for autonomous hiring.',
     result: 'A YC-backed platform with 750k+ rentable humans across 100+ countries, hireable by AI agents autonomously.',
   },
   {
     slug: 'altron-healthtech',
     name: 'Altron HealthTech',
-    tagline: "Enterprise HealthTech platform — South Africa's leading digital health company",
+    tagline: "Enterprise HealthTech platform, South Africa's leading digital health company",
     category: 'HealthTech · Enterprise',
     url: 'https://healthtech.altron.com',
     gradient: 'linear-gradient(135deg,#0F4C75,#1B6CA8)',
@@ -113,11 +113,11 @@ export const projects: Project[] = [
     tags: ['Enterprise B2B', 'Healthcare UX', 'Multi-audience', 'POPIA Compliance', 'Corporate Website'],
     metric: '30+ years · Primary digital platform for SA healthcare',
     challenge:
-      "A legacy South African HealthTech brand needed a single digital platform that could speak to four distinct audiences — clinics, doctors, medical bureaus, and enterprise clients — without fragmenting the experience or diluting the brand.",
+      "A legacy South African HealthTech brand needed a single digital platform that could speak to four distinct audiences (clinics, doctors, medical bureaus, and enterprise clients) without fragmenting the experience or diluting the brand.",
     built:
       'A full-scale enterprise corporate website with animated hero slider, tabbed solution navigation across 6 verticals (Practice Management, Medical Bureau, Occupational Health, Oncology, Healthcare Insights, Value Added Services), video testimonials, audience-segmentation UX, and POPIA/PAIA compliance documentation integrated throughout.',
     result:
-      "A polished, conversion-focused enterprise website driving consultation bookings, partnership inquiries, and product demo requests — the primary digital touchpoint for South Africa's leading HealthTech company.",
+      "A polished, conversion-focused enterprise website driving consultation bookings, partnership inquiries, and product demo requests: the primary digital touchpoint for South Africa's leading HealthTech company.",
   },
   {
     slug: 'nucleos',
@@ -162,9 +162,9 @@ export const projects: Project[] = [
     tags: ['3D', 'AR', 'CAD Pipeline'],
     metric: '66% higher engagement · 15% faster decisions',
     challenge:
-      'Complex B2B products are hard to explain — static slides and shipping thousand-pound demo units across continents slow deals and inflate costs.',
+      'Complex B2B products are hard to explain: static slides and shipping thousand-pound demo units across continents slow deals and inflate costs.',
     built:
-      'A platform that turns CAD files into interactive 3D experiences — product stills, AR and interactive 3D video — on a flat-fee model, accessible from any device.',
-    result: 'Higher engagement and faster decisions without the demo-shipping cost — 66% higher engagement, 15% faster decisions.',
+      'A platform that turns CAD files into interactive 3D experiences: product stills, AR and interactive 3D video, on a flat-fee model, accessible from any device.',
+    result: 'Higher engagement and faster decisions without the demo-shipping cost: 66% higher engagement, 15% faster decisions.',
   },
 ]

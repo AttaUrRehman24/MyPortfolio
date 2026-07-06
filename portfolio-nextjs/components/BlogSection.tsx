@@ -15,7 +15,7 @@ const posts = [
   },
   {
     category: 'AI Engineering',
-    title: 'Shipping real LLM features to production — beyond the notebook POC',
+    title: 'Shipping real LLM features to production, beyond the notebook POC',
     date: 'May 2026',
     readTime: '6 min read',
     color: '#fff3eb',

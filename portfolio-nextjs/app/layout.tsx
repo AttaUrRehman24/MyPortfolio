@@ -12,7 +12,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Atta Ur Rehman — Senior Full Stack Engineer | Next.js, Node.js & AI',
+    default: 'Atta Ur Rehman | Senior Full Stack Engineer | Next.js, Node.js & AI',
     template: '%s | Atta Ur Rehman',
   },
   description:
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     type: 'website',
     url: SITE_URL,
     siteName: 'Atta Ur Rehman',
-    title: 'Atta Ur Rehman — Senior Full Stack Engineer',
+    title: 'Atta Ur Rehman | Senior Full Stack Engineer',
     description:
       '10+ years architecting and shipping production SaaS, AI and high-scale systems. Next.js, Node.js, NestJS, TypeScript & AWS.',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Atta Ur Rehman — Senior Full Stack Engineer',
+    title: 'Atta Ur Rehman | Senior Full Stack Engineer',
     description: '10+ years shipping production SaaS, AI and high-scale systems. Next.js · Node.js · NestJS · AWS.',
     creator: '@AttaUrRehman24',
   },

@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: 'Qlu.ai',
     role: 'AI Sourcing Platform',
-    text: 'Founding-engineer level execution — from AWS microservices to React front ends. Saved our team months of rework with sound architecture from day one.',
+    text: 'Founding-engineer level execution, from AWS microservices to React front ends. Saved our team months of rework with sound architecture from day one.',
     avatarBg: 'var(--secondary)',
     initial: 'Q',
   },
