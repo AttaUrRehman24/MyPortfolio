@@ -198,6 +198,39 @@ function OfferCard() {
   )
 }
 
+const HERO_TRUST_ITEMS = [
+  { label: 'Focus', value: 'AI / LLM · SaaS · Full-stack' },
+  { label: 'Availability', value: 'Booking new roles now' },
+  { label: 'Response', value: 'Usually within 24 hours' },
+  { label: 'Engagement', value: 'Remote · Contract or full-time' },
+]
+
+function HeroTrustStrip() {
+  return (
+    <div className="hero-trust-strip" aria-label="Engagement details">
+      <div className="hero-trust-strip__grid">
+        {HERO_TRUST_ITEMS.map((item) => (
+          <div key={item.label} className="hero-trust-item">
+            <span>{item.label}</span>
+            <strong>{item.value}</strong>
+          </div>
+        ))}
+      </div>
+      <div className="hero-trust-strip__actions">
+        <a href="#portfolio" className="hero-trust-link">
+          Recent work
+        </a>
+        <a href="#contact" className="hero-trust-cta">
+          Book a call
+          <svg width="11" height="11" viewBox="0 0 18 18" fill="none" aria-hidden>
+            <path d="M1 17L17 1M17 1H5M17 1V13" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  )
+}
+
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
   const portraitRef = useRef<HTMLDivElement>(null)
@@ -218,7 +251,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="home"
-      className="hero-home relative w-full min-w-0 overflow-visible bg-white px-4 pb-6 pt-28 sm:px-8 lg:px-12"
+      className="hero-home relative w-full min-w-0 overflow-visible bg-white px-4 pt-24 sm:px-8 lg:px-12 lg:pt-28"
     >
       <div className="hero-floating-proofs" aria-hidden>
         {HERO_TOP_FLOATING_PROOFS.map((item) => (
@@ -229,76 +262,77 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="hero-shell mx-auto flex min-h-0 w-full max-w-[1298px] flex-col justify-center">
-        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:items-center lg:gap-x-6 lg:gap-y-3 xl:gap-x-10">
-          <h1 className="hero-headline display order-1 col-span-1 mb-1 text-center font-display text-xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-2xl md:text-3xl lg:order-none lg:col-span-12 lg:mb-0 lg:whitespace-nowrap lg:text-[clamp(1.75rem,3.1vw,3rem)] relative z-30">
-            <SplitText
-              tag="span"
-              text="I'm Atta Ur Rehman, Senior Full Stack Engineer"
-              className="font-display font-extrabold tracking-tight"
-              splitType="words"
-              delay={70}
-              duration={0.65}
-              ease="power3.out"
-              from={{ opacity: 0, y: 32 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.01}
-              rootMargin="0px"
-              textAlign="center"
-            />
-          </h1>
+      <div className="hero-shell mx-auto w-full max-w-[1298px]">
+        <div className="hero-main">
+          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:items-center lg:gap-x-6 lg:gap-y-3 xl:gap-x-10">
+            <h1 className="hero-headline display order-1 col-span-1 mb-1 text-center font-display text-xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-2xl md:text-3xl lg:order-none lg:col-span-12 lg:mb-0 lg:whitespace-nowrap lg:text-[clamp(1.75rem,3.1vw,3rem)] relative z-30">
+              <SplitText
+                tag="span"
+                text="I'm Atta Ur Rehman, Senior Full Stack Engineer"
+                className="font-display font-extrabold tracking-tight"
+                splitType="words"
+                delay={70}
+                duration={0.65}
+                ease="power3.out"
+                from={{ opacity: 0, y: 32 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.01}
+                rootMargin="0px"
+                textAlign="center"
+              />
+            </h1>
 
-          {/* LEFT — 25% */}
-          <aside className="hero-in-3 order-2 hidden flex-col gap-3 lg:order-none lg:col-span-3 lg:flex">
-            <SocialLinks />
-            <FounderCard />
-            <HeroColumnProof label="Mindset" value="Founding engineer ownership" />
-          </aside>
+            {/* LEFT — 25% */}
+            <aside className="hero-in-3 order-2 hidden flex-col gap-3 lg:order-none lg:col-span-3 lg:flex">
+              <SocialLinks />
+              <FounderCard />
+              <HeroColumnProof label="Mindset" value="Founding engineer ownership" />
+            </aside>
 
-          {/* CENTER — 50% */}
-          <div className="order-2 flex flex-col items-center overflow-visible lg:order-none lg:col-span-6">
-            {/* Portrait + orbit */}
-            <div className="relative mx-auto w-full max-w-[620px] overflow-visible px-4 sm:px-8">
-              <div
-                ref={portraitRef}
-                className="relative mx-auto flex h-[380px] w-full max-w-[520px] items-end justify-center overflow-visible sm:h-[420px] lg:h-[480px]"
-              >
-                {/* Animated blob backdrop */}
+            {/* CENTER — 50% */}
+            <div className="order-2 flex flex-col items-center overflow-visible lg:order-none lg:col-span-6">
+              <div className="relative mx-auto w-full max-w-[680px] overflow-visible px-4 sm:px-8">
                 <div
-                  className="hero-blob pointer-events-none absolute bottom-[4%] left-1/2 z-0 h-[88%] w-[92%] -translate-x-1/2 bg-gradient-to-b from-[#DBEAFE] via-[#B5D4F4] to-[#93C5FD] opacity-90"
-                  aria-hidden
-                />
+                  ref={portraitRef}
+                  className="hero-portrait relative mx-auto flex w-full max-w-[580px] items-end justify-center overflow-visible"
+                >
+                  <div
+                    className="hero-blob pointer-events-none absolute bottom-[4%] left-1/2 z-0 h-[88%] w-[92%] -translate-x-1/2 bg-gradient-to-b from-[#DBEAFE] via-[#B5D4F4] to-[#93C5FD] opacity-90"
+                    aria-hidden
+                  />
 
-                <OrbitingTechIcons items={TECH_STACK} revealed={iconsRevealed} variant="orbit" />
+                  <OrbitingTechIcons items={TECH_STACK} revealed={iconsRevealed} variant="orbit" />
 
-                <img
-                  src="/images/unnamed-removebg-preview.png"
-                  alt="Atta Ur Rehman, Senior Full Stack Engineer"
-                  className="relative z-10 h-[92%] w-auto max-w-[450px] translate-x-2 -translate-y-12 object-contain object-bottom drop-shadow-[0_24px_40px_rgba(15,23,42,0.2)] sm:translate-x-3 sm:-translate-y-14 lg:translate-x-4 lg:-translate-y-16"
-                />
+                  <img
+                    src="/images/unnamed-removebg-preview.png"
+                    alt="Atta Ur Rehman, Senior Full Stack Engineer"
+                    className="relative z-10 h-[92%] w-auto max-w-[490px] translate-x-2 -translate-y-12 object-contain object-bottom drop-shadow-[0_24px_40px_rgba(15,23,42,0.2)] sm:translate-x-3 sm:-translate-y-14 lg:translate-x-4 lg:-translate-y-16"
+                  />
 
-                {/* CTA overlay at bottom of portrait */}
-                <div className="absolute bottom-2 left-1/2 z-30 -translate-x-1/2">
-                  <HeroLiquidCTA />
+                  <div className="absolute bottom-2 left-1/2 z-30 -translate-x-1/2">
+                    <HeroLiquidCTA />
+                  </div>
                 </div>
-              </div>
 
-              <OrbitingTechIcons items={TECH_STACK} revealed={iconsRevealed} variant="mobile" />
+                <OrbitingTechIcons items={TECH_STACK} revealed={iconsRevealed} variant="mobile" />
+              </div>
             </div>
+
+            {/* RIGHT — 25% */}
+            <aside className="hero-in-3 order-3 hidden flex-col gap-3 lg:col-span-3 lg:flex">
+              <OfferCard />
+              <HeroColumnProof label="Working style" value="Direct 1:1 execution" align="right" />
+            </aside>
           </div>
 
-          {/* RIGHT — 25% */}
-          <aside className="hero-in-3 order-3 hidden flex-col gap-3 lg:col-span-3 lg:flex">
+          <div className="mt-8 flex flex-col gap-6 lg:hidden">
+            <SocialLinks className="justify-center pl-0" />
+            <FounderCard />
             <OfferCard />
-            <HeroColumnProof label="Working style" value="Direct 1:1 execution" align="right" />
-          </aside>
+          </div>
         </div>
 
-        <div className="mt-8 flex flex-col gap-6 lg:hidden">
-          <SocialLinks className="justify-center pl-0" />
-          <FounderCard />
-          <OfferCard />
-        </div>
+        <HeroTrustStrip />
       </div>
     </section>
   )

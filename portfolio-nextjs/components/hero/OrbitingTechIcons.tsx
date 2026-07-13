@@ -27,7 +27,11 @@ function useOrbitRadius() {
 
   useEffect(() => {
     const update = () => {
-      setRadius(window.innerWidth < 1024 ? 160 : 210)
+      const w = window.innerWidth
+      const h = window.innerHeight
+      if (w < 1024) setRadius(160)
+      else if (h >= 900) setRadius(240)
+      else setRadius(210)
     }
     update()
     window.addEventListener('resize', update)
