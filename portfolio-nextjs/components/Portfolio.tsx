@@ -189,56 +189,58 @@ export default function Portfolio() {
       </div>
 
       <div className="container-fluid">
-        <div className="portfolio-dots reveal" aria-hidden>
-          {PROJECTS.map((p) => (
-            <span
-              key={p.id}
-              className={`portfolio-dot${featured.id === p.id ? ' portfolio-dot--active' : ''}`}
-              style={
-                featured.id === p.id
-                  ? ({ background: p.accent } as CSSProperties)
-                  : undefined
-              }
-            />
-          ))}
-        </div>
-
-        <div className="portfolio-featured__row">
-          <h3 className="portfolio-featured__title">{featured.title}</h3>
-          <a
-            href={featured.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-chroma__cta portfolio-featured__link"
-            aria-label={`Visit ${featured.title} live`}
-          >
-            Visit live
-            <svg width="11" height="11" viewBox="0 0 18 18" fill="none" aria-hidden>
-              <path
-                d="M1 17L17 1M17 1H5M17 1V13"
-                stroke="currentColor"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
-        </div>
-
         <div
-          className="reveal portfolio-featured"
+          className="portfolio-details reveal"
           style={{ '--proj-accent': featured.accent } as CSSProperties}
         >
-          <div className="portfolio-featured__rail" aria-hidden />
-          <div className="portfolio-featured__body">
-            <div className="portfolio-featured__meta">
-              <div className="portfolio-featured__tags">
-                {featured.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
+          <div className="portfolio-dots" aria-hidden>
+            {PROJECTS.map((p) => (
+              <span
+                key={p.id}
+                className={`portfolio-dot${featured.id === p.id ? ' portfolio-dot--active' : ''}`}
+                style={
+                  featured.id === p.id
+                    ? ({ background: p.accent } as CSSProperties)
+                    : undefined
+                }
+              />
+            ))}
+          </div>
+
+          <div className="portfolio-featured__row">
+            <h3 className="portfolio-featured__title">{featured.title}</h3>
+            <a
+              href={featured.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-chroma__cta portfolio-featured__link"
+              aria-label={`Visit ${featured.title} live`}
+            >
+              Visit live
+              <svg width="11" height="11" viewBox="0 0 18 18" fill="none" aria-hidden>
+                <path
+                  d="M1 17L17 1M17 1H5M17 1V13"
+                  stroke="currentColor"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div className="portfolio-featured">
+            <div className="portfolio-featured__rail" aria-hidden />
+            <div className="portfolio-featured__body">
+              <div className="portfolio-featured__meta">
+                <div className="portfolio-featured__tags">
+                  {featured.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
               </div>
+              <p className="portfolio-featured__desc">{featured.description}</p>
             </div>
-            <p className="portfolio-featured__desc">{featured.description}</p>
           </div>
         </div>
       </div>

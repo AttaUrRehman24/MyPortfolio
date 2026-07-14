@@ -337,12 +337,21 @@ body{width:100%;min-width:320px;font-family:var(--font-body), 'Plus Jakarta Sans
   position:relative;
   display:inline;
 }
+.portfolio-details{
+  display:grid;
+  grid-template-columns:4px minmax(0,1fr);
+  column-gap:28px;
+  row-gap:14px;
+  width:100%;
+  padding-top:4px;
+}
 .portfolio-dots{
   display:flex;
   justify-content:center;
   align-items:center;
   gap:8px;
-  margin:8px 0 36px;
+  grid-column:1 / -1;
+  margin:8px 0 22px;
 }
 .portfolio-dot{
   width:8px;height:8px;
@@ -359,13 +368,12 @@ body{width:100%;min-width:320px;font-family:var(--font-body), 'Plus Jakarta Sans
 
 .portfolio-featured{
   position:relative;
+  grid-column:1 / -1;
   display:grid;
-  grid-template-columns:4px 1fr;
-  gap:0 28px;
+  grid-template-columns:4px minmax(0,1fr);
+  column-gap:28px;
   align-items:stretch;
-  max-width:1100px;
-  margin:0 auto;
-  padding:28px 0 4px;
+  padding:0 0 4px;
 }
 .portfolio-featured__rail{
   border-radius:4px;
@@ -394,11 +402,14 @@ body{width:100%;min-width:320px;font-family:var(--font-body), 'Plus Jakarta Sans
   border-bottom:1.5px solid color-mix(in srgb,var(--proj-accent,var(--primary)) 55%,transparent);
 }
 .portfolio-featured__row{
+  grid-column:1 / -1;
   display:flex;
   align-items:center;
+  justify-content:space-between;
   gap:18px;
   flex-wrap:wrap;
 }
+.portfolio-featured__title{text-align:left;justify-self:start}
 .portfolio-featured__title{
   font-family:var(--font-display);
   font-weight:900;
@@ -414,7 +425,7 @@ body{width:100%;min-width:320px;font-family:var(--font-body), 'Plus Jakarta Sans
   font-size:clamp(14.5px,1.2vw,16.5px);
   text-align:left;
   color:#64748B;
-  max-width:700px;
+  max-width:min(760px,100%);
   line-height:1.65;
   margin:0;
   font-weight:600;
@@ -605,6 +616,8 @@ body{width:100%;min-width:320px;font-family:var(--font-body), 'Plus Jakarta Sans
   .proj-slider .proj-card{flex:0 0 clamp(260px,34vw,340px);min-height:360px}
 }
 @media (max-width:768px){
+  .hero-featured{display:none}
+  .portfolio-section{display:none}
   .portfolio-section{padding:64px 0 72px}
   .portfolio-header{margin-bottom:32px;align-items:flex-start}
   .portfolio-heading{font-size:clamp(32px,8vw,44px)}
@@ -614,21 +627,28 @@ body{width:100%;min-width:320px;font-family:var(--font-body), 'Plus Jakarta Sans
   .proj-slider::before,
   .proj-slider::after{width:20px}
   .proj-glass .ptitle{font-size:clamp(16px,5vw,21px)}
-  .portfolio-featured{
-    grid-template-columns:3px 1fr;
-    gap:0 16px;
-    padding-top:16px;
+  .portfolio-details{
+    grid-template-columns:3px minmax(0,1fr);
+    column-gap:16px;
+    row-gap:12px;
   }
+  .portfolio-featured{
+    grid-template-columns:3px minmax(0,1fr);
+    column-gap:16px;
+  }
+  .portfolio-dots{margin-bottom:18px}
   .portfolio-featured__title{font-size:clamp(24px,7vw,34px)}
-  .portfolio-featured__row{gap:12px}
+  .portfolio-featured__row{
+    gap:12px;
+    align-items:flex-start;
+  }
 }
 @media (max-height:850px) and (min-width:1024px){
   .portfolio-section{padding:64px 0 72px}
   .proj-slider .proj-card{flex-basis:clamp(240px,24vw,330px);min-height:340px}
   .tcard{padding:24px}
   .skill-pill{padding:14px 24px;font-size:16px}
-  .portfolio-dots{margin-bottom:26px}
-  .portfolio-featured{padding-top:16px}
+  .portfolio-dots{margin-bottom:20px}
 }
 @media (prefers-reduced-motion:reduce){
   .portfolio-section::before{animation:none}
