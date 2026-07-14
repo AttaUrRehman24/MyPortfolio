@@ -47,8 +47,8 @@ type AnchorProps = BaseProps &
 type SiteGlassButtonProps = ButtonProps | AnchorProps
 
 const ArrowIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-    <path d="M1 17L17 1M17 1H5M17 1V13" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+  <svg width="11" height="11" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+    <path d="M1 17L17 1M17 1H5M17 1V13" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
 

@@ -54,62 +54,58 @@ const testimonialLoop = [...testimonials, ...testimonials]
 
 function Stars() {
   return (
-    <div style={{ display: 'flex', gap: 2, alignItems: 'center' }}>
+    <div className="tcard-stars" aria-label="5.0 rating">
       {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#2563EB">
+        <svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
-      <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,.5)', marginLeft: 4 }}>5.0</span>
+      <span>5.0</span>
     </div>
   )
 }
 
 export default function Testimonials() {
   return (
-    <section
-      className="rounded-section"
-      style={{
-        margin: '20px 20px',
-        borderRadius: 50,
-        overflow: 'hidden',
-        position: 'relative',
-        background: "url('/images/bg-dark.jpg') center/cover no-repeat, #0F172A",
-      }}
-    >
-      <div style={{ position: 'absolute', inset: 0, background: 'rgba(15,23,42,.78)' }} />
+    <section className="testimonials-section rounded-section" id="testimonials">
+      <div className="testimonials-section__veil" aria-hidden />
 
-      <div className="container" style={{ position: 'relative', zIndex: 2, paddingTop: 72, paddingBottom: 72 }}>
-        <div className="reveal" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 46px' }}>
-          <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 500, fontSize: 'clamp(30px,3.5vw,42px)', color: '#fff', letterSpacing: '-.015em', lineHeight: 1.15, marginBottom: 20 }}>
-            Testimonials That Speak to My Results
-          </h2>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'rgba(255,255,255,.6)', lineHeight: 1.6 }}>
+      <div className="container-fluid testimonials-section__inner">
+        <div className="testimonials-header reveal">
+          <p className="testimonials-kicker">Client voices</p>
+          <h2 className="testimonials-title">Testimonials That Speak to My Results</h2>
+          <p className="testimonials-lede">
             What teams and founders say about working with a senior engineer who owns the build end-to-end.
           </p>
         </div>
+      </div>
 
-        <div className="testimonials-marquee" aria-label="Client testimonials carousel">
-          <div className="testimonials-track">
-            {testimonialLoop.map((t, i) => (
-            <div key={`${t.role}-${i}`} className={`tcard reveal d${(i % 5) + 1}`}>
-              <svg width="28" height="28" viewBox="0 0 32 28" fill="rgba(37,99,235,.7)" style={{ marginBottom: 16 }}>
-                <path d="M0 28V16C0 7.163 5.373.588 16.128 0L17 3.235C11.355 4.235 8.484 6.941 8 12H12V28H0ZM16 28V16C16 7.163 21.373.588 32.128 0L33 3.235C27.355 4.235 24.484 6.941 24 12H28V28H16Z" />
-              </svg>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, lineHeight: 1.65, color: 'rgba(255,255,255,.68)', marginBottom: 24, flex: 1 }}>{t.text}</p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, paddingTop: 20, borderTop: '1px solid rgba(255,255,255,.1)' }}>
-                <div style={{ width: 40, height: 40, borderRadius: '50%', background: t.avatarBg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-body)', fontWeight: 700, color: '#fff', fontSize: 15, flexShrink: 0 }}>
-                  {t.initial}
-                </div>
-                <div style={{ flex: 1 }}>
-                  <p style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#fff' }}>{t.name}</p>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,.45)' }}>{t.role}</p>
-                </div>
+      <div className="testimonials-marquee" aria-label="Client testimonials carousel">
+        <div className="testimonials-track">
+          {testimonialLoop.map((t, i) => (
+            <article key={`${t.name}-${t.role}-${i}`} className="tcard">
+              <div className="tcard-top">
+                <svg className="tcard-quote" width="26" height="22" viewBox="0 0 32 28" fill="currentColor" aria-hidden>
+                  <path d="M0 28V16C0 7.163 5.373.588 16.128 0L17 3.235C11.355 4.235 8.484 6.941 8 12H12V28H0ZM16 28V16C16 7.163 21.373.588 32.128 0L33 3.235C27.355 4.235 24.484 6.941 24 12H28V28H16Z" />
+                </svg>
                 <Stars />
               </div>
-            </div>
-            ))}
-          </div>
+              <p className="tcard-text">{t.text}</p>
+              <footer className="tcard-footer">
+                <div
+                  className="tcard-avatar"
+                  style={{ background: t.avatarBg }}
+                  aria-hidden
+                >
+                  {t.initial}
+                </div>
+                <div className="tcard-meta">
+                  <p className="tcard-name">{t.name}</p>
+                  <p className="tcard-role">{t.role}</p>
+                </div>
+              </footer>
+            </article>
+          ))}
         </div>
       </div>
     </section>

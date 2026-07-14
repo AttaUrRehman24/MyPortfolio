@@ -180,11 +180,11 @@ export default function Navbar() {
           menuContentColor="#FFFFFF"
           useFixedPosition
           cta={
-            <a
-              href="#contact"
-              className="flex w-full items-center justify-center rounded-[8px] bg-gradient-to-br from-[#2563EB] to-[#38BDF8] px-4 py-3 font-body text-sm font-semibold text-white no-underline"
-            >
+            <a href="#contact" className="nav-chroma__cta nav-chroma__cta--mobile">
               Hire Me
+              <svg width="11" height="11" viewBox="0 0 18 18" fill="none" aria-hidden>
+                <path d="M1 17L17 1M17 1H5M17 1V13" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </a>
           }
         />

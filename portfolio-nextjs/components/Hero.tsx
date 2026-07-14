@@ -205,6 +205,55 @@ const HERO_TRUST_ITEMS = [
   { label: 'Engagement', value: 'Remote · Contract or full-time' },
 ]
 
+const HERO_FEATURED = [
+  {
+    name: 'HealthHavenRx',
+    metric: '200K Patients',
+    img: '/images/portfolio/healthhavenrx.png',
+    href: '#portfolio',
+  },
+  {
+    name: 'QLU AI',
+    metric: '1M+ Prospects',
+    img: '/images/portfolio/qlu-ai.png',
+    href: '#portfolio',
+  },
+  {
+    name: 'TAMM',
+    metric: '2.4M+ users',
+    img: '/images/portfolio/tamm.png',
+    href: '#portfolio',
+  },
+  {
+    name: 'CelcomDigi',
+    metric: 'Millions of users',
+    img: '/images/portfolio/celcomdigi.png',
+    href: '#portfolio',
+  },
+]
+
+function HeroFeaturedStrip() {
+  return (
+    <div className="hero-featured" aria-label="Featured work">
+      <div className="hero-featured__label">
+        <span>Selected work</span>
+        <strong>Shipped products clients still run on.</strong>
+      </div>
+      <div className="hero-featured__row">
+        {HERO_FEATURED.map((item) => (
+          <a key={item.name} href={item.href} className="hero-featured__card">
+            <img src={item.img} alt="" loading="lazy" />
+            <div>
+              <strong>{item.name}</strong>
+              <span>{item.metric}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function HeroTrustStrip() {
   return (
     <div className="hero-trust-strip" aria-label="Engagement details">
@@ -251,7 +300,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="home"
-      className="hero-home relative w-full min-w-0 overflow-visible bg-white px-4 pt-24 sm:px-8 lg:px-12 lg:pt-28"
+      className="hero-home relative w-full min-w-0 overflow-visible bg-white px-4 pt-[4.25rem] sm:px-8 lg:px-12 lg:pt-[4.75rem]"
     >
       <div className="hero-floating-proofs" aria-hidden>
         {HERO_TOP_FLOATING_PROOFS.map((item) => (
@@ -264,8 +313,8 @@ export default function Hero() {
 
       <div className="hero-shell mx-auto w-full max-w-[1298px]">
         <div className="hero-main">
-          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:items-center lg:gap-x-6 lg:gap-y-3 xl:gap-x-10">
-            <h1 className="hero-headline display order-1 col-span-1 mb-1 text-center font-display text-xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-2xl md:text-3xl lg:order-none lg:col-span-12 lg:mb-0 lg:whitespace-nowrap lg:text-[clamp(1.75rem,3.1vw,3rem)] relative z-30">
+          <div className="hero-grid grid grid-cols-1 items-start gap-5 lg:grid-cols-12 lg:items-center lg:gap-x-5 lg:gap-y-1 xl:gap-x-8">
+            <h1 className="hero-headline display order-1 col-span-1 mb-0 text-center font-display text-xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-2xl md:text-3xl lg:order-none lg:col-span-12 lg:whitespace-nowrap lg:text-[clamp(1.65rem,2.8vw,2.75rem)] relative z-30">
               <SplitText
                 tag="span"
                 text="I'm Atta Ur Rehman, Senior Full Stack Engineer"
@@ -283,7 +332,7 @@ export default function Hero() {
             </h1>
 
             {/* LEFT — 25% */}
-            <aside className="hero-in-3 order-2 hidden flex-col gap-3 lg:order-none lg:col-span-3 lg:flex">
+            <aside className="hero-in-3 order-2 hidden flex-col gap-2.5 lg:order-none lg:col-span-3 lg:flex">
               <SocialLinks />
               <FounderCard />
               <HeroColumnProof label="Mindset" value="Founding engineer ownership" />
@@ -291,10 +340,10 @@ export default function Hero() {
 
             {/* CENTER — 50% */}
             <div className="order-2 flex flex-col items-center overflow-visible lg:order-none lg:col-span-6">
-              <div className="relative mx-auto w-full max-w-[680px] overflow-visible px-4 sm:px-8">
+              <div className="relative mx-auto w-full max-w-[720px] overflow-visible px-2 sm:px-6">
                 <div
                   ref={portraitRef}
-                  className="hero-portrait relative mx-auto flex w-full max-w-[580px] items-end justify-center overflow-visible"
+                  className="hero-portrait relative mx-auto flex w-full max-w-[620px] items-end justify-center overflow-visible"
                 >
                   <div
                     className="hero-blob pointer-events-none absolute bottom-[4%] left-1/2 z-0 h-[88%] w-[92%] -translate-x-1/2 bg-gradient-to-b from-[#DBEAFE] via-[#B5D4F4] to-[#93C5FD] opacity-90"
@@ -306,10 +355,10 @@ export default function Hero() {
                   <img
                     src="/images/unnamed-removebg-preview.png"
                     alt="Atta Ur Rehman, Senior Full Stack Engineer"
-                    className="relative z-10 h-[92%] w-auto max-w-[490px] translate-x-2 -translate-y-12 object-contain object-bottom drop-shadow-[0_24px_40px_rgba(15,23,42,0.2)] sm:translate-x-3 sm:-translate-y-14 lg:translate-x-4 lg:-translate-y-16"
+                    className="relative z-10 h-[94%] w-auto max-w-[520px] translate-x-2 -translate-y-8 object-contain object-bottom drop-shadow-[0_24px_40px_rgba(15,23,42,0.2)] sm:translate-x-3 sm:-translate-y-10 lg:translate-x-4 lg:-translate-y-12"
                   />
 
-                  <div className="absolute bottom-2 left-1/2 z-30 -translate-x-1/2">
+                  <div className="absolute bottom-1 left-1/2 z-30 -translate-x-1/2">
                     <HeroLiquidCTA />
                   </div>
                 </div>
@@ -319,20 +368,23 @@ export default function Hero() {
             </div>
 
             {/* RIGHT — 25% */}
-            <aside className="hero-in-3 order-3 hidden flex-col gap-3 lg:col-span-3 lg:flex">
+            <aside className="hero-in-3 order-3 hidden flex-col gap-2.5 lg:col-span-3 lg:flex">
               <OfferCard />
               <HeroColumnProof label="Working style" value="Direct 1:1 execution" align="right" />
             </aside>
           </div>
 
-          <div className="mt-8 flex flex-col gap-6 lg:hidden">
+          <div className="mt-6 flex flex-col gap-5 lg:hidden">
             <SocialLinks className="justify-center pl-0" />
             <FounderCard />
             <OfferCard />
           </div>
         </div>
 
-        <HeroTrustStrip />
+        <div className="hero-bottom">
+          <HeroFeaturedStrip />
+          <HeroTrustStrip />
+        </div>
       </div>
     </section>
   )

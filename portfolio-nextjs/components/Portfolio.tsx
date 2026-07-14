@@ -94,10 +94,12 @@ const PROJECTS: PortfolioProject[] = [
 function ProjCard({
   project,
   hidden,
+  active,
   onHover,
 }: {
   project: PortfolioProject
   hidden?: boolean
+  active?: boolean
   onHover?: () => void
 }) {
   return (
@@ -105,27 +107,43 @@ function ProjCard({
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="proj-card"
+      className={`proj-card${active ? ' proj-card--active' : ''}`}
       aria-hidden={hidden || undefined}
+      aria-current={active && !hidden ? 'true' : undefined}
       style={{ '--proj-accent': project.accent } as CSSProperties}
       onMouseEnter={hidden ? undefined : onHover}
       onFocus={hidden ? undefined : onHover}
     >
-      <Image
-        className="card-inner"
-        src={project.img}
-        alt={hidden ? '' : project.alt}
-        fill
-        sizes="(max-width: 768px) 300px, 340px"
-        style={{ objectFit: 'cover', objectPosition: project.objectPosition }}
-      />
-      <div className="proj-card__overlay" aria-hidden />
-      <div className="proj-arrow">
-        <svg width="20" height="20" viewBox="0 0 18 18" fill="none" aria-hidden>
-          <path d="M1 17L17 1M17 1H5M17 1V13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <div className="proj-card__media">
+        <Image
+          className="card-inner"
+          src={project.img}
+          alt={hidden ? '' : project.alt}
+          fill
+          sizes="(max-width: 768px) 300px, 380px"
+          style={{ objectFit: 'cover', objectPosition: project.objectPosition }}
+        />
+        <div className="proj-card__overlay" aria-hidden />
+      </div>
+
+      <div className="proj-arrow" aria-hidden>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path
+            d="M1 17L17 1M17 1H5M17 1V13"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       </div>
+
       <div className="proj-glass">
+        <div className="proj-glass__tags">
+          {project.tags.map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
         <span className="ptitle">{project.title}</span>
         <p className="pdesc">{project.description}</p>
       </div>
@@ -135,64 +153,93 @@ function ProjCard({
 
 export default function Portfolio() {
   const [featured, setFeatured] = useState<PortfolioProject>(PROJECTS[0])
-  const [linkHover, setLinkHover] = useState(false)
 
   return (
     <section id="portfolio" className="portfolio-section">
-      <div className="container">
+      <div className="container-fluid">
         <div className="portfolio-header reveal">
-          <h2 className="display portfolio-heading">
-            Let&apos;s have a look at
-            <br />
-            my <span style={{ color: 'var(--primary)' }}>Portfolio</span>
-          </h2>
+          <div className="portfolio-header__copy">
+            <p className="portfolio-kicker">Selected work</p>
+            <h2 className="display portfolio-heading">
+              Let&apos;s have a look at
+              <br />
+              my <span>Portfolio</span>
+            </h2>
+          </div>
           <SiteGlassButton as="a" href="/case-studies" variant="ghost" size="md" icon={<span />}>
             See All
           </SiteGlassButton>
         </div>
+      </div>
 
-        <div className="proj-slider reveal">
-          <div className="proj-track">
-            {PROJECTS.map((project) => (
-              <ProjCard key={project.id} project={project} onHover={() => setFeatured(project)} />
-            ))}
-            {PROJECTS.map((project) => (
-              <ProjCard key={`dup-${project.id}`} project={project} hidden />
-            ))}
-          </div>
+      <div className="proj-slider reveal">
+        <div className="proj-track">
+          {PROJECTS.map((project) => (
+            <ProjCard
+              key={project.id}
+              project={project}
+              active={featured.id === project.id}
+              onHover={() => setFeatured(project)}
+            />
+          ))}
+          {PROJECTS.map((project) => (
+            <ProjCard key={`dup-${project.id}`} project={project} hidden />
+          ))}
         </div>
+      </div>
 
+      <div className="container-fluid">
         <div className="portfolio-dots reveal" aria-hidden>
           {PROJECTS.map((p) => (
             <span
               key={p.id}
               className={`portfolio-dot${featured.id === p.id ? ' portfolio-dot--active' : ''}`}
+              style={
+                featured.id === p.id
+                  ? ({ background: p.accent } as CSSProperties)
+                  : undefined
+              }
             />
           ))}
         </div>
 
-        <div className="reveal portfolio-featured">
-          <div className="portfolio-featured__row">
-            <h3 className="portfolio-featured__title">{featured.title}</h3>
-            <a
-              href={featured.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="portfolio-featured__link"
-              style={{
-                color: linkHover ? '#fff' : '#344054',
-                background: linkHover ? '#344054' : 'transparent',
-              }}
-              onMouseEnter={() => setLinkHover(true)}
-              onMouseLeave={() => setLinkHover(false)}
-              aria-label={`Open ${featured.title}`}
-            >
-              <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden>
-                <path d="M1 17L17 1M17 1H5M17 1V13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
+        <div className="portfolio-featured__row">
+          <h3 className="portfolio-featured__title">{featured.title}</h3>
+          <a
+            href={featured.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-chroma__cta portfolio-featured__link"
+            aria-label={`Visit ${featured.title} live`}
+          >
+            Visit live
+            <svg width="11" height="11" viewBox="0 0 18 18" fill="none" aria-hidden>
+              <path
+                d="M1 17L17 1M17 1H5M17 1V13"
+                stroke="currentColor"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <div
+          className="reveal portfolio-featured"
+          style={{ '--proj-accent': featured.accent } as CSSProperties}
+        >
+          <div className="portfolio-featured__rail" aria-hidden />
+          <div className="portfolio-featured__body">
+            <div className="portfolio-featured__meta">
+              <div className="portfolio-featured__tags">
+                {featured.tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </div>
+            </div>
+            <p className="portfolio-featured__desc">{featured.description}</p>
           </div>
-          <p className="portfolio-featured__desc">{featured.description}</p>
         </div>
       </div>
     </section>
