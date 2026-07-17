@@ -340,10 +340,10 @@ export default function Hero() {
 
             {/* CENTER — 50% */}
             <div className="order-2 flex flex-col items-center overflow-visible lg:order-none lg:col-span-6">
-              <div className="relative mx-auto w-full max-w-[720px] overflow-visible px-2 sm:px-6">
+              <div className="relative mx-auto w-full max-w-[620px] overflow-visible px-4 sm:px-8">
                 <div
                   ref={portraitRef}
-                  className="hero-portrait relative mx-auto flex w-full max-w-[620px] items-end justify-center overflow-visible"
+                  className="relative mx-auto flex h-[380px] w-full max-w-[520px] items-end justify-center overflow-visible sm:h-[420px] lg:h-[480px]"
                 >
                   <div
                     className="hero-blob pointer-events-none absolute bottom-[4%] left-1/2 z-0 h-[88%] w-[92%] -translate-x-1/2 bg-gradient-to-b from-[#DBEAFE] via-[#B5D4F4] to-[#93C5FD] opacity-90"
@@ -355,7 +355,7 @@ export default function Hero() {
                   <img
                     src="/images/unnamed-removebg-preview.png"
                     alt="Atta Ur Rehman, Senior Full Stack Engineer"
-                    className="relative z-10 h-[94%] w-auto max-w-[520px] translate-x-2 -translate-y-8 object-contain object-bottom drop-shadow-[0_24px_40px_rgba(15,23,42,0.2)] sm:translate-x-3 sm:-translate-y-10 lg:translate-x-4 lg:-translate-y-12"
+                    className="relative z-10 h-[92%] w-auto max-w-[450px] translate-x-2 -translate-y-12 object-contain object-bottom drop-shadow-[0_24px_40px_rgba(15,23,42,0.2)] sm:translate-x-3 sm:-translate-y-14 lg:translate-x-4 lg:-translate-y-16"
                   />
 
                   <div className="absolute bottom-1 left-1/2 z-30 -translate-x-1/2">
